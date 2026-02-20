@@ -20,10 +20,15 @@
 
 
     <h2 class="text-2xl font-medium">Your Courses</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <BookingItem v-for="i in 2" :key="i"></BookingItem> 
+      </div>
   </div>
+
 </template>
 
 
 <script setup>
-import CourseItem from './components/CourseItem.vue'//importing the course item component to be used in the template
+import CourseItem from '@/components/CourseItem.vue';
+import BookingItem from '@/components/BookingItem.vue'//importing the course item component to be used in the template
 </script>
