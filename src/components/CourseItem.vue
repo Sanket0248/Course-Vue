@@ -1,17 +1,25 @@
+<!-- This component represents a course item in the course hub. here all the avilable course information is displayed -->
 <template>
-    <RoundedCard >
+    <CardSection>
+        <template #header>
+            {{title}}
+        </template>
 
-        <h3 class="p-4 text-xl font-medium border-b border-gray-200">{{title}}</h3>
+        <template #body>
+            <p>{{price}}</p>
+        </template>
 
-        <p class="p-4  border-b border-gray-200">{{price}}</p>
-
-        <p class="p-4 text-medium">{{description}}</p>
-        <div class="flex justify-end p-4">
+        <template #footer>
+            <p>{{description}}</p>
+            <div class="flex justify-end p-4">
             <button 
                 @click="$emit('click')"
-                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Enroll Now</button>   
-        </div>
-    </RoundedCard>
+                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Enroll Now
+            </button>   
+            </div>
+        </template>
+
+    </CardSection>
 </template>
 
 <!--1. {{ }} — Displaying Data :The double curly braces are Vue's way of displaying data/variables in the template:
@@ -19,7 +27,8 @@ defineProps — Receiving Data from Parent :Props are how a parent component pas
 defineEmits + $emit — Sending Events to Parent :This is the opposite of props — it's how a child talks back to the parent.
 -->
 <script setup>
-import RoundedCard from './RoundedCard.vue';
+import CardSection from '@components/CardSection.vue';
+import RoundedCard from '@components/RoundedCard.vue';
 
     defineProps({
         title: String,
