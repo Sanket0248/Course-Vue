@@ -1,11 +1,16 @@
 <!-- This file represents a booked item component for displaying enrolled courses -->
 <template>
-        <RoundedCard>
-            <div class="p-4">Vue Course</div>
-        </RoundedCard>
+    <CardSection>
+        <template #body>
+            <div class="flex justify-between items-center">
+                <div>Vue Course</div>
+                <RoundedButton>Go to Course</RoundedButton>
+            </div>
+        </template>
+    </CardSection>
 </template>
 
 <script setup>
-import RoundedCard from '@components/RoundedCard.vue';
-
+import CardSection from '@/components/CardSection.vue'
+import RoundedButton from '@/components/RoundedButton.vue'
 </script>

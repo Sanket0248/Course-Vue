@@ -12,10 +12,7 @@
         <template #footer>
             <p>{{description}}</p>
             <div class="flex justify-end p-4">
-            <button 
-                @click="$emit('click')"
-                class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Enroll Now
-            </button>   
+                <RoundedButton @click="$emit('click')">Purchase</RoundedButton>
             </div>
         </template>
 
@@ -27,8 +24,8 @@ defineProps — Receiving Data from Parent :Props are how a parent component pas
 defineEmits + $emit — Sending Events to Parent :This is the opposite of props — it's how a child talks back to the parent.
 -->
 <script setup>
-import CardSection from '@components/CardSection.vue';
-import RoundedCard from '@components/RoundedCard.vue';
+import CardSection from '@/components/CardSection.vue'
+import RoundedButton from '@/components/RoundedButton.vue'
 
     defineProps({
         title: String,
